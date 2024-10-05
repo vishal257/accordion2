@@ -1,0 +1,145 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+  font-size: 4.5rem;
+  position: relative;
+  margin-left: 20px;
+  padding: 40px;
+}
+
+.main-content{
+  float: right;
+}
+
+.accordion-container{
+  width: fit-content;
+  padding: 20px;
+}
+
+.card-container{
+  margin-bottom: 15px;
+}
+
+.card{
+  display: flex;
+  gap: 15px;
+}
+
+.details{
+  color: #1F1F1F;
+  position: relative;
+  background-color: #FEFDF8;
+  width: 800px;
+  height: 120px;
+  border-radius: 60px;
+  padding:26px;
+  overflow: hidden;
+  transition: height 800ms ease-in-out;
+}
+
+.details.open{
+  height: 500px;
+}
+
+h2{
+  font-size: 3rem;
+  font-weight: 500;
+  margin-left: 40px;
+  color:#1F1F1F;
+}
+
+
+.description{
+  background-color: #FEFDF8;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  opacity: 0;
+  padding: 50px;
+  transition: height 800ms ease-in-out, opacity 800ms ease-in-out;
+}
+
+.left-container{
+  flex-basis: 50%;
+}
+
+.right-container{
+  flex-basis: 50%;
+}
+
+.description.open{
+  height: 450px;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.toggler{
+  cursor: pointer;
+  height: 120px;
+  width: 120px;
+  background-color: #F07485;
+  border-radius: 50%;
+  position: relative;
+  transition: background-color 600ms ease-in-out;
+}
+
+.toggler.open{
+ background-color: #FFBDC5; 
+}
+
+.toggler::after, .toggler::before{
+  content: " ";
+  width: 80px;
+  height: 0px;
+  border: 1px solid #fefdf8;
+  border-bottom: transparent;
+  display: inline-block;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggler.close::before{
+  transform: rotate(90deg);
+  left:15%;
+}
+.toggler.open::before{
+  border: hidden;
+}
+
+.image-container{
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: scale(0);
+  transition: transform 1s ease-in-out;
+}
+img{
+  max-width: 100%;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  transform: rotate(-30deg);
+}
+
+.description.open .image-container{
+  transform: scale(1);
+}
+
+.right-container p{
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.circle{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: yellow;
+}
